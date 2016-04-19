@@ -1,0 +1,126 @@
+# my gitconfig
+
+[user]
+	name = susp
+	email = susp@users.noreply.github.com
+
+[color]
+	ui = auto
+[core]
+	pager = less -R
+	excludesfile = ~/.gitignore
+[push]
+	default = current
+[alias]
+        a = add
+	ap = add -p
+	au = add -u
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	br = branch -r
+	ci = commit
+	co = checkout
+	cob = checkout -b
+	cop = checkout -p
+	cp = cherry-pick
+	d = diff
+	db = diff HEAD
+        di = diff
+	ds = diff --cached
+	du = diff
+	f = fetch
+	fix = commit --amend
+	fixup = !git fu
+	fu = commit --amend -C HEAD
+	l = log
+	l1 = log --pretty=oneline --abbrev-commit
+	lg = log --graph --pretty=oneline --abbrev-commit --decorate
+	lgd = !git lg
+	lgD = !git lg --no-decorate
+	lgr = !git --no-pager lg -n10
+	lgrr = !git --no-pager lg -n20
+	lgrrr = !git --no-pager lg -n30
+	lgrrrr = !git --no-pager lg -n40
+	lr = <<<
+		n=10
+		a1="${1:-$n}"
+		a2="$2"
+		if ! [ "${a1##[0-9]*}" = "" ]
+		then
+		  t="$a1"
+		  a1="${a2:-$n}"
+		  a2="$t"
+		fi
+		git --no-pager l1 --reverse -n"$a1" "${a2:-HEAD}"
+	>>>
+	lrr = !git lr -n20
+	lrrr = !git lr -n30
+	lrrrr = !git lr -n40
+	ls = ls-files
+	m = merge --log
+	mb = merge-base
+	merge-to-integrate = !git mi
+	merge-to-pull = !git mp
+	mi = merge --no-ff
+	mp = merge --ff
+	pushall = <<<
+		for remote in $(
+			git config --get-regexp \
+				'^remote\..*\.url$' \
+				"^(git@github\.com:kana|$HOME/Dropbox)" \
+			| sed 's/^remote\.\([^.]*\)\.url .*$/\1/'
+		)
+		do
+		  echo "# ------------------------------"
+		  echo "# git push $remote $@"
+		  git push "$remote" "$@"
+		done
+	>>>
+	ra = rebase --abort
+	rc = rebase --continue
+	review = <<<
+		if [[ 1 -le $# && $# -le 2 ]]
+		then
+		  git log -p --reverse "$1..$2" --
+		else
+		  echo 'Usage: git review INTEGRATED [TOPIC]'
+		fi
+	>>>
+	rh = reset --hard
+	ri = <<<
+		git rebase -i "HEAD~${1:-10}"
+	>>>
+	rib = <<<
+		git rebase -i $(git merge-base "${1:-HEAD}" HEAD)
+	>>>
+	rp = reset -p
+	rs = reset --soft
+	rw = reset --hard ORIG_HEAD
+	rx = reset --mixed
+	s = show
+	s1 = show HEAD~1
+	s2 = show HEAD~2
+	s3 = show HEAD~3
+	sa = stash apply
+	sd = stash drop
+	sf = show --format=fuller
+	since = <<<
+		git lg "$1..HEAD" --
+	>>>
+	sl = stash list
+	sm = submodule
+	sma = submodule add
+	smi = submodule init
+	sms = submodule status
+	smu = submodule update
+	sp = stash pop
+	ss = stash save
+	st = status
+	t = tag
+	td = tag -d
+	tv = <<<
+		git tag "$1" -m "Version $1"
+	>>>
+
+# __END__

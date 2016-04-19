@@ -1,0 +1,66 @@
+About This Repository
+=====================
+
+This git repository contains configuration files, documents and scripts
+for various softwares which are written by El Pin Al.
+
+
+
+
+License
+=======
+
+Most of these files contain the notice on their license, but some files don't
+so.  The following is the license for such files (which is known as MIT
+license):
+
+    Copyright (C) 2016 El Pin Al
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of these configuration files, associated documentation files,
+    scripts and other associated files (the "Configuration"), to deal in the
+    Configuration without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Configuration, and to permit persons to whom the
+    Configuration is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Configuration.
+
+    THE CONFIGURATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+    NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+    OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE CONFIGURATION OR
+    THE USE OR OTHER DEALINGS IN THE CONFIGURATION.
+
+
+
+
+Notes
+=====
+
+Naming rules for branches and tags
+----------------------------------
+
+master
+    The latest and stable version of files.
+
+maint
+    Branch for maintenance of the repository.
+
+{software}-{topic}
+    Branches for some {topic} on {software}.
+
+{software}-{topic}-{version}
+    Tags for a specific {version} of a branch {software}-{topic}.
+
+z-*
+    Tags for dead branches which are not maintained anymore.
+
+
+
+
+-- 
+El Pin Al

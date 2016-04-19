@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e
+
+usage() {
+  echo "Usage: note title" >&2
+}
+
+if [[ -z $1 || $1 == -h || $1 == --help ]]; then
+  usage
+  exit 2
+fi
+
+readonly DIR="$HOME/.note"
+
+title="$1"
+name=$(date "+%Y-%m-%d-${title}.md")
+date=$(date "+%Y-%m-%d %H:%M:%S")
+
+
+if [[ ! -d $DIR ]]; then
+  mkdir "$DIR"
+fi
+
+cd "$DIR"
+if [[ ! -f $name ]]; then
+  cat >"$name" <<EOT
+title: $title
+==========
+date: $date
+- - -
+EOT
+fi
+
+vim "$name"

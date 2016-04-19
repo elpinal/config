@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+usage() {
+  echo "Usage: list" >&2
+}
+
+if [[ $1 == -h || $1 == --help ]]; then
+  usage
+  exit 2
+fi
+
+readonly DIR="$HOME/.note"
+
+
+if [[ ! -d $DIR ]]; then
+  echo "There are no notes." >&2
+  echo "You should make notes using 'note' command before you execute this command." >&2
+  exit 1
+fi
+
+cd "$DIR"
+vim .

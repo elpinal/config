@@ -1,0 +1,38 @@
+#!/bin/bash
+
+## TODO:
+# Check that specified version is valid.
+# Enable you to specify options. 
+
+if [ "$1" == '' ]; then
+  echo "Usage: $0 vim_version" >/dev/stderr
+  exit 1
+fi
+
+set -e
+
+options=(
+  --enable-fail-if-missing
+  --enable-multibyte
+  --with-tlib=ncurses
+  --with-features=huge
+#  --enable-rubyinterp
+#  --enable-python3interp
+#  --enable-perlinterp
+#  --enable-luainterp
+#  --with-lua-prefix=/usr/local
+  --with-compiledby="Lukana"
+)
+
+echo "######## build-vim ########"
+echo "Setted options are:"
+echo "${options[@]}"
+echo
+echo "Specified vim version is:"
+echo "$1"
+echo
+echo "####### vvm install #######"
+
+vvm install vim--v"$1" "${options[@]}"
+
+vvm use vim--v"$1"
