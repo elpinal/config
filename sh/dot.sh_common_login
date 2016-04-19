@@ -57,6 +57,12 @@ export LESS='-P [?eEOF:?PB%PB\%..]'
 [[ -s "$HOME/.vvm/etc/login" ]] && source "$HOME/.vvm/etc/login"
 
 
+# rbenv  #{{{2
+if [[ -d $HOME/.rbenv ]]; then
+  PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init - --no-rehash zsh)"
+fi
+
 # Go  #{{{2
 [[ -s "$HOME/.gvm/etc/login" ]] && source "$HOME/.gvm/etc/login"
 export GOPATH=$HOME
