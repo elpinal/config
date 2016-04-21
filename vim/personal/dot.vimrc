@@ -1306,11 +1306,12 @@ endfunction
 " FIXME: some mappings are not countable.
 " Physical/Logical keyboard layout declaration  "{{{2
 
-" Currently, there are no difference between Physical and Logical one.
-KeyboardLayout ;  ;
-KeyboardLayout :  :
-KeyboardLayout <Return>  <Return>
-KeyboardLayout <S-Return>  <S-Return>
+" Semicolon and Return are swapped by Karabiner on
+" some environments.
+KeyboardLayout ;  <Return>
+KeyboardLayout :  <S-Return>
+KeyboardLayout <Return>  ;
+KeyboardLayout <S-Return>  :
 
 
 
