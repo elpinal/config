@@ -619,7 +619,7 @@ function! s:cmd_SuspendWithAutomticCD()
     " there are extra leading whitespaces in the cd script.
     silent execute '!screen -X eval'
     \              '''select another'''
-    \              '''stuff "  cd \\"'.getcwd().'\\"  \#\#,vim-auto-cd\015"'''
+    \              '''stuff "  cd \"'.getcwd().'\"  \#\#,vim-auto-cd\015"'''
     redraw!
     let s:GNU_SCREEN_AVAILABLE_P = (v:shell_error == 0)
   endif
