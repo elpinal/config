@@ -11,6 +11,9 @@ fi
 
 set -e
 
+version=$1
+shift 1
+
 options=(
   --enable-fail-if-missing
   --enable-multibyte
@@ -22,6 +25,9 @@ options=(
 #  --enable-luainterp
 #  --with-lua-prefix=/usr/local
   --with-compiledby="Lukana"
+
+  # User specific options
+  "$@"
 )
 
 echo "######## build-vim ########"
@@ -29,10 +35,10 @@ echo "Setted options are:"
 echo "${options[@]}"
 echo
 echo "Specified vim version is:"
-echo "$1"
+echo "$version"
 echo
 echo "####### vvm install #######"
 
-vvm install vim--v"$1" "${options[@]}"
+vvm install vim--v"$version" "${options[@]}"
 
-vvm use vim--v"$1"
+vvm use vim--v"$version"
