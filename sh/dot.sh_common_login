@@ -27,6 +27,9 @@ if [ "${PATH/$HOME/}" = "$PATH" ]; then  # if $HOME/bin is not in $PATH ...
     PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   fi
 
+  # for stack
+  if [ -d "$HOME/.local/bin" ]; then PATH="$HOME/.local/bin:$PATH"; fi
+
   # for my own tools
   if [ -d "$HOME/bin" ]; then PATH="$HOME/bin:$PATH"; fi
   if [ -d "$HOME/man" ]; then MANPATH="$HOME/man:$MANPATH"; fi
