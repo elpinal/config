@@ -62,8 +62,8 @@ export LESS='-P [?eEOF:?PB%PB\%..]'
 
 
 # Last resort  #{{{1
-# VVM: Vim Version Manager  #{{{2
-[[ -s "$HOME/.vvm/etc/login" ]] && source "$HOME/.vvm/etc/login"
+# VVMN: Vim Version Manager Next  #{{{2
+[[ -s "$HOME/.vvmn/etc/login" ]] && source "$HOME/.vvmn/etc/login"
 
 
 # rbenv  #{{{2
