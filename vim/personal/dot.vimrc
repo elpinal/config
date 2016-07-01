@@ -681,25 +681,6 @@ command! -bang -bar -complete=file -nargs=? Sjis  Cp932<bang> <args>
 
 
 " Utilities  "{{{1
-" :grep wrappers  "{{{2
-"
-" To edit {pattern} easily via Command-line mode history,
-" define :Grep as follows:
-"
-" :Grep {file} ... {pattern} ==> :grep /{pattern}/ {file} ...
-"
-" :Lgrep is a :lgrep wrapper like :Grep.
-
-command! -bar -complete=file -nargs=+ Grep  call s:grep('grep', [<f-args>])
-command! -bar -complete=file -nargs=+ Lgrep  call s:grep('lgrep', [<f-args>])
-
-function! s:grep(command, args)
-  execute a:command '/'.a:args[-1].'/' join(a:args[:-2])
-endfunction
-
-
-
-
 " Help-related stuffs  "{{{2
 
 function! s:helpbufwinnr()
@@ -1445,8 +1426,8 @@ Cnmap <silent> qp  Qexecute colder [count]
 Cnmap <silent> qn  Qexecute cnewer [count]
 Cnmap <silent> qm  make
 Cnmap <noexec> qM  make<Space>
-Cnmap <noexec> q<Space>  make<Space>
-Cnmap <noexec> qg  Grep<Space>
+Cnmap <noexec> q<Space>  grep<Space>
+Cnmap <noexec> qg  grep<Space>
 
 
 " For location list (mnemonic: Quickfix list for the current Window)  "{{{3
@@ -1466,8 +1447,8 @@ Cnmap <silent> qwp  Qexecute lolder [count]
 Cnmap <silent> qwn  Qexecute lnewer [count]
 Cnmap <silent> qwm  lmake
 Cnmap <noexec> qwM  lmake<Space>
-Cnmap <noexec> qw<Space>  lmake<Space>
-Cnmap <noexec> qwg  Lgrep<Space>
+Cnmap <noexec> qw<Space>  lgrep<Space>
+Cnmap <noexec> qwg  lgrep<Space>
 
 
 
