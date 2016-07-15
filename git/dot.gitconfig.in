@@ -1,8 +1,8 @@
 # my gitconfig
 
 [user]
-	name = susp
-	email = susp@users.noreply.github.com
+	name = elpinal
+	email = elpinal@users.noreply.github.com
 
 [color]
 	ui = auto

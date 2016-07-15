@@ -2,7 +2,7 @@
 
 Version 0.0.0
 Script ID: ****
-Copyright (C) 2016 Susp
+Copyright (C) 2016 Elpinal
 License: MIT license  {{{
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
@@ -49,10 +49,10 @@ Requirements:
 - Vim 7.4 or later
 
 Latest version:
-http://github.com/susp/vim-{name}
+http://github.com/elpinal/vim-{name}
 
 Document in HTML format:
-http://vim-doc.heroku.com/view?https://raw.github.com/susp/vim-{name}/master/doc/{name}.txt
+http://vim-doc.heroku.com/view?https://raw.github.com/elpinal/vim-{name}/master/doc/{name}.txt
 
 
 
@@ -111,7 +111,7 @@ EXAMPLES					*{name}-examples*
 ==============================================================================
 BUGS						*{name}-bugs*
 
-- See also http://github.com/susp/vim-{name}/issues
+- See also http://github.com/elpinal/vim-{name}/issues
 
 
 
