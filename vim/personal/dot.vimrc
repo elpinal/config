@@ -1760,7 +1760,7 @@ Objnoremap ar  a]
 Objnoremap ir  i]
 
 
-" Select the last chaged text - "c" stands for "C"hanged.
+" Select the last changed text - "c" stands for "C"hanged.
   " like gv
 nnoremap <expr> gc  <SID>keys_to_select_the_last_changed_text()
   " as a text object
