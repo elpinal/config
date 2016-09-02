@@ -75,7 +75,7 @@ fi
 # Go  #{{{2
 [[ -s "$HOME/.gvmn/etc/login" ]] && source "$HOME/.gvmn/etc/login"
 export GOPATH=$HOME
-# $HOME/bin (== $GOPATH/bin) is already exported.
+# $HOME/bin (== $GOPATH/bin) has already been exported.
 # PATH=$GOPATH/bin:$PATH
 
 
