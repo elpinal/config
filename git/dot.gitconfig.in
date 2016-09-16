@@ -68,7 +68,7 @@
 		for remote in $(
 			git config --get-regexp \
 				'^remote\..*\.url$' \
-				"^(git@github\.com:kana|$HOME/Dropbox)" \
+				"^git@github\.com:elpinal" \
 			| sed 's/^remote\.\([^.]*\)\.url .*$/\1/'
 		)
 		do
