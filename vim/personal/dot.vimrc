@@ -184,7 +184,7 @@ endif
 filetype plugin indent on
 
 
-set ambiwidth=double
+set ambiwidth=single
 set autoindent
 set backspace=indent,eol,start
 set backup
