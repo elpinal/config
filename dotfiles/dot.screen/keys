@@ -99,14 +99,20 @@ bind -c region n split
 bind -c region ^N split
 bind -c region s eval 'split' 'focus down' 'other'  # split the current window
 bind -c region ^S eval 'split' 'focus down' 'other'
+bind -c region v eval 'split -v' 'focus right' 'other'  # split the current window vertically
+bind -c region ^V eval 'split -v' 'focus right' 'other'
 bind -c region c remove
 bind -c region ^C remove
 bind -c region o only
 bind -c region ^O only
+bind -c region h focus left
+bind -c region ^H focus left
 bind -c region j focus down
 bind -c region ^J focus down
 bind -c region k focus up
 bind -c region ^K focus up
+bind -c region l focus right
+bind -c region ^L focus right
 bind -c region t focus top
 bind -c region ^T focus top
 bind -c region b focus bottom
@@ -114,10 +120,12 @@ bind -c region ^B focus bottom
 bind -c region r focus down
 bind -c region ^R focus down
 bind -c region R focus up
-bind -c region = resize =
-bind -c region + resize +1
-bind -c region - resize -1
+bind -c region = resize -b =
+bind -c region + resize -v +1
+bind -c region - resize -v -1
 bind -c region _ resize max
+bind -c region > resize -h +1
+bind -c region < resize -h -1
 
 
 
