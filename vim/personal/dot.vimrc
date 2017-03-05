@@ -2152,6 +2152,14 @@ let g:is_bash = 1
 
 
 
+" rust  "{{{2
+
+autocmd MyAutoCmd FileType rust
+\ setlocal expandtab shiftwidth=4 softtabstop=4
+
+
+
+
 " tex  "{{{2
 
 autocmd MyAutoCmd FileType tex
