@@ -38,29 +38,5 @@ license):
 
 
 
-Notes
-=====
-
-Naming rules for branches and tags
-----------------------------------
-
-master
-    The latest and stable version of files.
-
-maint
-    Branch for maintenance of the repository.
-
-{software}-{topic}
-    Branches for some {topic} on {software}.
-
-{software}-{topic}-{version}
-    Tags for a specific {version} of a branch {software}-{topic}.
-
-z-*
-    Tags for dead branches which are not maintained anymore.
-
-
-
-
 -- 
 kana <http://whileimautomaton.net/>
