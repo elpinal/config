@@ -42,9 +42,9 @@ used="${used%% *}"
 avail="${dfresult% *}"
 avail="${avail##* }"
 
-size=$(echo $size | awk '{printf "%.4f\n", $1 * 1024 / 10 ** 9}')
-used=$(echo $used | awk '{printf "%.4f\n", $1 * 1024 / 10 ** 9}')
-avail=$(echo $avail | awk '{printf "%.4f\n", $1 * 1024 / 10 ** 9}')
+size=$(echo $size | awk '{printf "%.4f\n", $1 * 1024 / 10**9}')
+used=$(echo $used | awk '{printf "%.4f\n", $1 * 1024 / 10**9}')
+avail=$(echo $avail | awk '{printf "%.4f\n", $1 * 1024 / 10**9}')
 
 s_width=$(echo $size | wc -m)
 u_width=$(echo $used | wc -m)
