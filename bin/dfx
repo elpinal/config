@@ -42,14 +42,9 @@ used="${used%% *}"
 avail="${dfresult% *}"
 avail="${avail##* }"
 
-# TODO
-#   bc command can't print the leading zero.
-#   So sed is used now.
-#   How do you use awk?
-
-size=$(echo scale = 4 \; $size \* 1024 / 1000000000 | bc)
-used=$(echo scale = 4 \; $used \* 1024 / 1000000000 | bc)
-avail=$(echo scale = 4 \; $avail \* 1024 / 1000000000 | bc | sed 's/^\./0./')
+size=$(echo $size | awk '{printf "%.4f\n", $1 * 1024 / 10 ** 9}')
+used=$(echo $used | awk '{printf "%.4f\n", $1 * 1024 / 10 ** 9}')
+avail=$(echo $avail | awk '{printf "%.4f\n", $1 * 1024 / 10 ** 9}')
 
 s_width=$(echo $size | wc -m)
 u_width=$(echo $used | wc -m)
