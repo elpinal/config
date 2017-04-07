@@ -2,7 +2,7 @@ About This Repository
 =====================
 
 This git repository contains configuration files, documents and scripts
-for various softwares which are written by El Pin Al.
+for various softwares which are written by kana <http://whileimautomaton.net/>.
 
 
 
@@ -14,7 +14,7 @@ Most of these files contain the notice on their license, but some files don't
 so.  The following is the license for such files (which is known as MIT
 license):
 
-    Copyright (C) 2016 El Pin Al
+    Copyright (C) 2008 kana <http://whileimautomaton.net/>
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of these configuration files, associated documentation files,
@@ -63,4 +63,4 @@ z-*
 
 
 -- 
-El Pin Al
+kana <http://whileimautomaton.net/>
