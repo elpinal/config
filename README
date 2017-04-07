@@ -3,6 +3,8 @@ About This Repository
 
 This git repository contains configuration files, documents and scripts
 for various softwares which are written by kana <http://whileimautomaton.net/>.
+There are some modifications by El Pin Al.
+The original repository by kana is at https://github.com/kana/config.
 
 
 
@@ -40,3 +42,4 @@ license):
 
 -- 
 kana <http://whileimautomaton.net/>
+El Pin Al -- Arranger
