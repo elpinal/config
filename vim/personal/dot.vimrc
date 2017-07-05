@@ -1504,7 +1504,7 @@ nmap <C-g><C-w><C-k>  <C-g>wk
 
 
 
-" Command-line editting  "{{{2
+" Command-line editing  "{{{2
 
 " pseudo vi-like keys
 cnoremap <Esc>h  <Left>
