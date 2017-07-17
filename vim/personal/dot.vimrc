@@ -2059,7 +2059,7 @@ autocmd MyAutoCmd FileType css
 
 autocmd MyAutoCmd FileType go
 \   setlocal noexpandtab
-\ | Cnmap <silent> <LocalLeader>i  %!goimports
+\ | Cnmap <buffer> <silent> <LocalLeader>i  %!goimports
 
 
 
