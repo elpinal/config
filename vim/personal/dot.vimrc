@@ -580,11 +580,10 @@ function! s:cmd_SuspendWithAutomticCD()
     call s:activate_terminal()
 
     " \015 = <C-m>
-    " To avoid adding the cd script into the command-line history,
-    " there are extra leading whitespaces in the cd script.
+    " Assume that 'shell'=/bin/bash & the shell in 'another' is coco3.
     silent execute '!screen -X eval'
     \              '''select another'''
-    \              '''stuff "  cd \\"'.getcwd().'\\"  \#\#,vim-auto-cd\015"'''
+    \              "\"stuff \\\"cd '".getcwd()."'\015\\\"\""
     redraw!
     " TODO: Show what happened on failure.
   else
