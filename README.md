@@ -1,10 +1,19 @@
+# Config
+
+This repository was originally developed by [kana](http://whileimautomaton.net/)
+at [github.com/kana/config](https://github.com/kana/config).
+
+There are some modifications to make configurations suitable for
+[elpinal](https://github.com/elpinal).
+
+The original README is as follows:
+
+```
 About This Repository
 =====================
 
 This git repository contains configuration files, documents and scripts
 for various softwares which are written by kana <http://whileimautomaton.net/>.
-There are some modifications by El Pin Al.
-The original repository by kana is at https://github.com/kana/config.
 
 
 
@@ -40,6 +49,56 @@ license):
 
 
 
+Notes
+=====
+
+Naming rules for branches and tags
+----------------------------------
+
+master
+    The latest and stable version of files.
+
+maint
+    Branch for maintenance of the repository.
+
+{software}-{topic}
+    Branches for some {topic} on {software}.
+
+{software}-{topic}-{version}
+    Tags for a specific {version} of a branch {software}-{topic}.
+
+z-*
+    Tags for dead branches which are not maintained anymore.
+
+
+To extract specific files
+-------------------------
+
+You can easily extract (or, more precise, make a package for) specific stuffs
+from this repository with the following command:
+
+    $ make PACKAGE_NAME={package_name} [PACKAGE_TYPE={archive_type}] package
+
+Where {package_name} is one of the strings listed in ALL_PACKAGES,
+and {archive_type} is one of the strings listed in ALL_PACKAGE_TYPES.
+See Makefile for the detail of ALL_PACKAGES and ALL_PACKAGE_TYPES.
+For example:
+
+    $ make PACKAGE_NAME=vim-textobj-user package
+
+The above command makes vim-textobj-user-{version}.tar.bz2
+which contains files and directories related to textobj-user, a Vim plugin.
+
+
+
+
 -- 
+"To Vim, or not to Vim." -- The True Vim Master
 kana <http://whileimautomaton.net/>
-El Pin Al -- Arranger
+```
+
+## Author
+
+- Kudos to the author of the original repository: [kana](http://whileimautomaton.net/)
+
+- [elpinal](https://github.com/elpinal)
