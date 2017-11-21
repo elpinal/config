@@ -577,8 +577,6 @@ command! -bar -nargs=0 SuspendWithAutomticCD
 \ call s:cmd_SuspendWithAutomticCD()
 function! s:cmd_SuspendWithAutomticCD()
   if s:GNU_SCREEN_AVAILABLE_P
-    call s:activate_terminal()
-
     " \015 = <C-m>
     " Assume that 'shell'=/bin/bash & the shell in 'another' is coco3.
     silent execute '!screen -X eval'
