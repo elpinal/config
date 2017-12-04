@@ -2070,6 +2070,15 @@ autocmd MyAutoCmd FileType gtd
 
 
 
+" help  "{{{2
+
+" Open :help always in the left window.
+autocmd MyAutoCmd FileType help
+\ wincmd H
+
+
+
+
 " html  "{{{2
 
 " Restore the indentation sytle in Vim 7.3 or earlier.
