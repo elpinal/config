@@ -2056,7 +2056,13 @@ autocmd MyAutoCmd FileType css
 
 autocmd MyAutoCmd FileType go
 \   setlocal noexpandtab
-\ | Cnmap <buffer> <silent> <LocalLeader>i  %!goimports
+\ | Fnmap <buffer> <silent> <LocalLeader>i  <SID>goimports()
+
+function! s:goimports()
+  let pos = getpos('.')
+  %!goimports
+  call setpos('.', pos)
+endfunction
 
 
 
