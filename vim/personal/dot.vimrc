@@ -2058,6 +2058,7 @@ autocmd MyAutoCmd FileType go
 \   setlocal noexpandtab
 \ | Fnmap <buffer> <silent> <LocalLeader>i  <SID>goimports()
 
+" Restore the cursor position after goimports.
 function! s:goimports()
   let pos = getpos('.')
   %!goimports
