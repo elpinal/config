@@ -1,6 +1,6 @@
 " Vim additional ftplugin: go/textobj-function
 " Version: 0.0.0
-" Copyright (C) 2016 Elpinal
+" Copyright (C) 2016 El Pin Al
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
 "     a copy of this software and associated documentation files (the
