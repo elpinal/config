@@ -59,7 +59,7 @@ endfunction
 
 command! -buffer -range Align  <line1>,<line2>call s:align()
 
-let b:undo_ftplugin .= 'delcommand Align'
+let b:undo_ftplugin .= (b:undo_ftplugin == '' ? '' : ' | ') . 'delcommand Align'
 
 let b:did_ftplugin_haskell_align = 1
 
