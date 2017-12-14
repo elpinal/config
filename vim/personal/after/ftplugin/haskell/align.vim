@@ -23,7 +23,7 @@
 " }}}
 
 if exists("b:did_ftplugin_haskell_align")
-    finish
+  finish
 endif
 
 let s:query = '`shouldBe`'
