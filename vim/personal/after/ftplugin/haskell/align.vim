@@ -28,15 +28,10 @@ endif
 
 let s:query = '`shouldBe`'
 
-function! s:get_col()
-  let [_, _, col, _] = getpos('.')
-  return col
-endfunction
 
 function! s:add_col()
   normal! n
-  let col = s:get_col()
-  let s:cols += [col]
+  let s:cols += [col('.')]
 endfunction
 
 function! s:get_max_col(f, l)
@@ -47,8 +42,7 @@ endfunction
 
 function! s:pack_spaces(c0)
   normal! n
-  let col = s:get_col()
-  let spaces = repeat(' ', a:c0 - col)
+  let spaces = repeat(' ', a:c0 - col('.'))
   execute 'normal!' 'i' . spaces
 endfunction
 
