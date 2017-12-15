@@ -71,8 +71,22 @@ augroup END
 
 
 
+function! s:escape_xxd()
+  setlocal bin< eol<
+  execute "autocmd! ftplugin-xxd * <buffer>"
+  " FIXME: What should happen when 'filetype' is separated by dots?
+  if &filetype !=# 'xxd' " If the next filetype is not xxd:
+    silent %!xxd -r
+    setlocal nomodified
+  endif
+endfunction
+
+function! s:SID_PREFIX()
+ return matchstr(expand('<sfile>'), '<SNR>\d\+_')
+endfunction
+
 let b:undo_ftplugin = (exists('b:undo_ftplugin') ? b:undo_ftplugin . ' | ' : '')
-\ . 'setlocal bin< eol< | execute "autocmd! ftplugin-xxd * <buffer>" | execute "silent %!xxd -r"'
+\ . 'call ' . s:SID_PREFIX() . 'escape_xxd()'
 
 let b:did_ftplugin = 1
 
