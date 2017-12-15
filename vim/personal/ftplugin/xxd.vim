@@ -82,7 +82,7 @@ function! s:escape_xxd()
 endfunction
 
 function! s:SID_PREFIX()
- return matchstr(expand('<sfile>'), '<SNR>\d\+_')
+  return matchstr(expand('<sfile>'), '<SNR>\d\+_')
 endfunction
 
 let b:undo_ftplugin = (exists('b:undo_ftplugin') ? b:undo_ftplugin . ' | ' : '')
