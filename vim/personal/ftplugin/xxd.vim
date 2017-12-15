@@ -42,7 +42,6 @@ function! s:xxd() abort
   setlocal binary
   setlocal noendofline
   silent %!xxd -g 1
-  %s/\r$//e
   setlocal nomodified
 endfunction
 
@@ -53,7 +52,6 @@ endfunction
 
 function! s:post_save()
   silent %!xxd -g 1
-  %s/\r$//e
   setlocal nomodified
   call setpos('.', b:xxd_cursor)
   unlet b:xxd_cursor
