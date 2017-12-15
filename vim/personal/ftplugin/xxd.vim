@@ -38,18 +38,32 @@ endif
 
 
 
-setlocal binary noendofline
-silent %!xxd -g 1
-%s/\r$//e
-setlocal nomodified
+function! s:xxd() abort
+  setlocal binary
+  setlocal noendofline
+  silent %!xxd -g 1
+  %s/\r$//e
+  setlocal nomodified
+endfunction
+
+function! s:pre_save()
+  let b:xxd_cursor = getpos('.')
+  silent %!xxd -r
+endfunction
+
+function! s:post_save()
+  silent %!xxd -g 1
+  %s/\r$//e
+  setlocal nomodified
+  call setpos('.', b:xxd_cursor)
+  unlet b:xxd_cursor
+endfunction
+
+call s:xxd()
 augroup ftplugin-xxd
   autocmd! * <buffer>
-  autocmd BufWritePre <buffer> let b:xxd_cursor = getpos('.')
-  autocmd BufWritePre <buffer> silent %!xxd -r
-  autocmd BufWritePost <buffer> silent %!xxd -g 1
-  autocmd BufWritePost <buffer> %s/\r$//e
-  autocmd BufWritePost <buffer> setlocal nomodified
-  autocmd BufWritePost <buffer> call setpos('.', b:xxd_cursor) | unlet b:xxd_cursor
+  autocmd BufWritePre <buffer> call s:pre_save()
+  autocmd BufWritePost <buffer> call s:post_save()
 augroup END
 
 
