@@ -67,9 +67,9 @@ function! HaskellComplete(findstart, base)
   endif
 endfunction
 
-let b:undo_ftplugin .= ...
 setlocal omnifunc=HaskellComplete
 
+let b:undo_ftplugin .= (exists('b:undo_ftplugin') ? ' | ' : '') . 'setlocal omnifunc<'
 
 " __END__
 " vim: foldmethod=marker
