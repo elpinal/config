@@ -68,6 +68,8 @@ function! HaskellComplete(findstart, base)
 endfunction
 
 let b:undo_ftplugin .= ...
+setlocal omnifunc=HaskellComplete
+
 
 " __END__
 " vim: foldmethod=marker
