@@ -179,6 +179,7 @@ endif
 set modeline  " Some distros disable this by default.
 set mouse=a
 set ruler
+set shell=/bin/bash
 set showcmd
 set showmode
 set updatetime=4000
