@@ -2510,6 +2510,7 @@ Cnmap <silent> [Space]km  Ku mru
 Cnmap <silent> [Space]kp  Ku bundle
 Cnmap <silent> [Space]kq  Ku quickfix
 Cnmap <silent> [Space]ks  Ku source
+Cnmap <silent> [Space]kt  Ku tabpage
   " w is for ~/working.
 Cnmap <silent> [Space]kw  Ku myproject
 
