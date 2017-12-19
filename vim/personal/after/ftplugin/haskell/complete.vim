@@ -22,6 +22,10 @@
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
 
+if exists("b:did_ftplugin_haskell_complete")
+  finish
+endif
+
 let s:keywords = [
   \ 'case',
   \ 'class',
