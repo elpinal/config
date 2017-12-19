@@ -1,4 +1,4 @@
-" Vim additional ftplugin: align.vim - align `shouleBe` for testing with Hspec of Haskell.
+" align.vim - align `shouleBe` for testing with Hspec of Haskell.
 " Version: 0.0.0
 " Copyright (C) 2017 El Pin Al
 " License: MIT license  {{{
@@ -21,17 +21,54 @@
 "     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
-
-if exists("b:did_ftplugin_haskell_align")
-  finish
-endif
+" Variables "{{{1
+let s:query = '`shouldBe`'
 
 
-command! -buffer -range Align  <line1>,<line2>call haskell#align#align()
 
-let b:undo_ftplugin .= (b:undo_ftplugin == '' ? '' : ' | ') . 'delcommand Align'
 
-let b:did_ftplugin_haskell_align = 1
 
-" __END__
+
+
+
+" Interface  "{{{1
+function! s:add_col()
+  normal! n
+  let s:cols += [col('.')]
+endfunction
+
+function! s:get_max_col(f, l)
+  let s:cols = []
+  execute a:f ',' a:l 'g/' . s:query . '/call s:add_col()'
+  return max(s:cols)
+endfunction
+
+function! s:pack_spaces(c0)
+  normal! n
+  let spaces = repeat(' ', a:c0 - col('.'))
+  execute 'normal!' 'i' . spaces
+endfunction
+
+function! haskell#align#align() range
+  let col = s:get_max_col(a:firstline, a:lastline)
+  execute a:firstline ',' a:lastline 'g/' . s:query . '/call s:pack_spaces(' . col . ')'
+endfunction
+
+
+
+
+
+
+
+
+" Misc.  "{{{1
+
+
+
+
+
+
+
+
+" __END__  "{{{1
 " vim: foldmethod=marker
