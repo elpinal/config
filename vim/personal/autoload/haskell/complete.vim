@@ -1,4 +1,4 @@
-" Vim additional ftplugin: complete.vim - completion
+" complete.vim - completion
 " Version: 0.0.0
 " Copyright (C) 2017 El Pin Al
 " License: MIT license  {{{
@@ -21,16 +21,75 @@
 "     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
+" Variables "{{{1
+let s:keywords = [
+  \ 'case',
+  \ 'class',
+  \ 'data',
+  \ 'default',
+  \ 'deriving',
+  \ 'do',
+  \ 'else',
+  \ 'foreign',
+  \ 'if',
+  \ 'import',
+  \ 'in',
+  \ 'infix',
+  \ 'infixl',
+  \ 'infixr',
+  \ 'instance',
+  \ 'let',
+  \ 'module',
+  \ 'newtype',
+  \ 'of',
+  \ 'then',
+  \ 'type',
+  \ 'where',
+  \ '_'
+  \ ]
 
-if exists("b:did_ftplugin_haskell_complete")
-  finish
-endif
 
-setlocal omnifunc=haskell#complete#haskell_complete
 
-let b:undo_ftplugin .= (exists('b:undo_ftplugin') ? ' | ' : '') . 'setlocal omnifunc<'
 
-let b:did_ftplugin_haskell_complete = 1
 
-" __END__
+
+
+
+" Interface  "{{{1
+function! haskell#complete#haskell_complete(findstart, base)
+  if a:findstart
+    let line = getline('.')
+    let start = col('.') - 1
+    while start > 0 && line[start - 1] =~ '\a'
+      let start -= 1
+    endwhile
+    return start
+  else
+    let res = []
+    for k in s:keywords
+      if k =~ '^' . a:base
+        call add(res, k)
+      endif
+    endfor
+    return res
+  endif
+endfunction
+
+
+
+
+
+
+
+
+" Misc.  "{{{1
+
+
+
+
+
+
+
+
+" __END__  "{{{1
 " vim: foldmethod=marker
