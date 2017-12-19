@@ -1,4 +1,4 @@
-" Vim additional ftplugin: align.vim - align `shouleBe` for testing with Hspec of Haskell.
+" Vim additional ftplugin: haskell.vim - Haskell
 " Version: 0.0.0
 " Copyright (C) 2017 El Pin Al
 " License: MIT license  {{{
@@ -22,16 +22,34 @@
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
 
-if exists("b:did_ftplugin_haskell_align")
+if exists("b:did_ftplugin_haskell")
   finish
 endif
 
 
+
+
+" alignment
 command! -buffer -range Align  <line1>,<line2>call haskell#align#align()
 
-let b:undo_ftplugin .= (b:undo_ftplugin == '' ? '' : ' | ') . 'delcommand Align'
+" completion
+setlocal omnifunc=haskell#complete#haskell_complete
 
-let b:did_ftplugin_haskell_align = 1
+
+
+
+if exists('b:undo_ftplugin')
+  let b:undo_ftplugin .= '|'
+else
+  let b:undo_ftplugin = ''
+endif
+
+let b:undo_ftplugin .= '
+\   delcommand Align
+\ | setlocal omnifunc<
+\ '
+
+let b:did_ftplugin_haskell = 1
 
 " __END__
 " vim: foldmethod=marker
