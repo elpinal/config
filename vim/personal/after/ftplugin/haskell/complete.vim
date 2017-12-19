@@ -75,5 +75,7 @@ setlocal omnifunc=HaskellComplete
 
 let b:undo_ftplugin .= (exists('b:undo_ftplugin') ? ' | ' : '') . 'setlocal omnifunc<'
 
+let b:did_ftplugin_haskell_complete = 1
+
 " __END__
 " vim: foldmethod=marker
