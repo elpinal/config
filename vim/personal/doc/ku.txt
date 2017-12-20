@@ -96,7 +96,7 @@ sources if you want to select and to take action on something which is not
 provided by the default sources.  To add sources, put the corresponding
 scripts into "autoload/ku/" directories in 'runtimepath'.  As scripts are put,
 ku recognizes them automatically, so that you don't have to reboot Vim.  See
-alsso |ku-sources| for the details.
+also |ku-sources| for the details.
 
 
 Screenshots:
