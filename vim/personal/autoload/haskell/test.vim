@@ -1,4 +1,4 @@
-" Vim additional ftplugin: haskell.vim - Haskell
+" test.vim - For Hspec users.
 " Version: 0.0.0
 " Copyright (C) 2017 El Pin Al
 " License: MIT license  {{{
@@ -21,39 +21,30 @@
 "     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
-
-if exists("b:did_ftplugin_haskell")
-  finish
-endif
-
-
-
-
-" alignment
-command! -buffer -range Align  <line1>,<line2>call haskell#align#align()
-
-" completion
-setlocal omnifunc=haskell#complete#haskell_complete
-
-" open tests
-command! -buffer EditTest  call haskell#test#edit()
+" Interface  "{{{1
+function! haskell#test#edit()
+  let _ = matchlist(expand('%'), '\v<src\/(.*\/)?(.{-1,})\.hs')
+  if len(_) == 0
+    return
+  endif
+  execute 'edit' 'test/' . _[1] . _[2] . 'Spec.hs'
+endfunction
 
 
 
 
-if exists('b:undo_ftplugin')
-  let b:undo_ftplugin .= '|'
-else
-  let b:undo_ftplugin = ''
-endif
 
-let b:undo_ftplugin .= '
-\   delcommand Align
-\ | setlocal omnifunc<
-\ | delcommand EditTest
-\ '
 
-let b:did_ftplugin_haskell = 1
 
-" __END__
+
+" Misc.  "{{{1
+
+
+
+
+
+
+
+
+" __END__  "{{{1
 " vim: foldmethod=marker
