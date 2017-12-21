@@ -35,6 +35,16 @@ command! -buffer -range Align  <line1>,<line2>call haskell#align#align()
 " completion
 setlocal omnifunc=haskell#complete#haskell_complete
 
+" open tests
+command! -buffer EditTest  call s:edit_test()
+function! s:edit_test()
+  let _ = matchlist(expand('%'), '\v<src\/(.*\.hs)')
+  if len(_) == 0
+    return
+  endif
+  execute 'edit' 'test/' . _[1]
+endfunction
+
 
 
 
@@ -47,6 +57,7 @@ endif
 let b:undo_ftplugin .= '
 \   delcommand Align
 \ | setlocal omnifunc<
+\ | delcommand EditTest
 \ '
 
 let b:did_ftplugin_haskell = 1
