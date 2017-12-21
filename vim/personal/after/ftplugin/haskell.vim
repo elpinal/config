@@ -38,11 +38,11 @@ setlocal omnifunc=haskell#complete#haskell_complete
 " open tests
 command! -buffer EditTest  call s:edit_test()
 function! s:edit_test()
-  let _ = matchlist(expand('%'), '\v<src\/(.*\.hs)')
+  let _ = matchlist(expand('%'), '\v<src\/(.*\/)?(.{-1,})\.hs')
   if len(_) == 0
     return
   endif
-  execute 'edit' 'test/' . _[1]
+  execute 'edit' 'test/' . _[1] . _[2] . 'Spec.hs'
 endfunction
 
 
