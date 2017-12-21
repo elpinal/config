@@ -1,0 +1,9 @@
+module {module_name} where
+
+import Test.Hspec
+
+spec :: Spec
+spec = do
+  describe "..." $
+    it "..." $ do
+      return ()

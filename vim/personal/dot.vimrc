@@ -2594,10 +2594,21 @@ endfunction
 function! s:skeleton_haskell()
   let _ = matchlist(expand('%'), '\v^%(%(.*\/)?test\/)?Spec.hs$')
   if len(_) == 0
+    call s:skeleton_haskell_hspec()
     return
   endif
 
   SkeletonLoad haskell-spec
+  return
+endfunction
+
+function! s:skeleton_haskell_hspec()
+  let _ = matchlist(expand('%'), '\v^%(.*\/)?[^\/]+Spec.hs$')
+  if len(_) == 0
+    return
+  endif
+
+  SkeletonLoad haskell-spec-module
   return
 endfunction
 
