@@ -2570,6 +2570,7 @@ function! s:on_User_plugin_skeleton_detect()
   \                   . '(autoload|doc|ftplugin|indent|plugin|syntax)'
   \                   . '\/.*\.(txt|vim)$')
   if len(_) == 0
+    call s:skeleton_haskell()
     return
   endif
   let after_p = _[1] != ''
@@ -2587,6 +2588,16 @@ function! s:on_User_plugin_skeleton_detect()
     execute 'SkeletonLoad' 'vim-'._[2]
   endif
 
+  return
+endfunction
+
+function! s:skeleton_haskell()
+  let _ = matchlist(expand('%'), '\v^%(%(.*\/)?test\/)?Spec.hs$')
+  if len(_) == 0
+    return
+  endif
+
+  SkeletonLoad haskell-spec
   return
 endfunction
 
