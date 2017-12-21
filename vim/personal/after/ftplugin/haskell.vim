@@ -51,6 +51,7 @@ let b:undo_ftplugin .= '
 \   delcommand Align
 \ | setlocal omnifunc<
 \ | delcommand EditTest
+\ | unlet b:did_ftplugin_haskell
 \ '
 
 let b:did_ftplugin_haskell = 1
