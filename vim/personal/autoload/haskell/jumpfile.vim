@@ -1,4 +1,4 @@
-" Vim additional ftplugin: haskell.vim - Haskell
+" jumpfile.vim - Jump around modules.
 " Version: 0.0.0
 " Copyright (C) 2017 El Pin Al
 " License: MIT license  {{{
@@ -21,44 +21,31 @@
 "     TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
-
-if exists("b:did_ftplugin_haskell")
-  finish
-endif
-
-
-
-
-" alignment
-command! -buffer -range Align  <line1>,<line2>call haskell#align#align()
-
-" completion
-setlocal omnifunc=haskell#complete#haskell_complete
-
-" open tests
-command! -buffer EditTest  call haskell#test#edit()
-
-" jump file
-command! -buffer JumpToModule  call haskell#jumpfile#here()
+" Interface  "{{{1
+function! haskell#jumpfile#here()
+  let word = expand('<cWORD>')
+  let list = split(word, '\.')
+  let file = 'src/' . join(list, '/') . '.hs'
+  if filereadable(file)
+    execute 'edit' file
+  endif
+endfunction
 
 
 
 
-if exists('b:undo_ftplugin')
-  let b:undo_ftplugin .= '|'
-else
-  let b:undo_ftplugin = ''
-endif
 
-let b:undo_ftplugin .= '
-\   delcommand Align
-\ | setlocal omnifunc<
-\ | delcommand EditTest
-\ | delcommand JumpToModule
-\ | unlet b:did_ftplugin_haskell
-\ '
 
-let b:did_ftplugin_haskell = 1
 
-" __END__
+
+" Misc.  "{{{1
+
+
+
+
+
+
+
+
+" __END__  "{{{1
 " vim: foldmethod=marker
