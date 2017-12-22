@@ -44,6 +44,14 @@ command! -buffer JumpToModule  call haskell#jumpfile#here()
 
 
 
+nnoremap <buffer> <silent> <LocalLeader>a  :Align<Return>
+vnoremap <buffer> <silent> <LocalLeader>a  :Align<Return>
+nnoremap <buffer> <silent> <LocalLeader>t  :<C-u>EditTest<Return>
+nnoremap <buffer> <silent> <LocalLeader>j  :<C-u>JumpToModule<Return>
+
+
+
+
 if exists('b:undo_ftplugin')
   let b:undo_ftplugin .= '|'
 else
@@ -55,6 +63,10 @@ let b:undo_ftplugin .= '
 \ | setlocal omnifunc<
 \ | delcommand EditTest
 \ | delcommand JumpToModule
+\ | execute "silent! nunmap <buffer> <LocalLeader>a"
+\ | execute "silent! vunmap <buffer> <LocalLeader>a"
+\ | execute "silent! nunmap <buffer> <LocalLeader>t"
+\ | execute "silent! nunmap <buffer> <LocalLeader>j"
 \ | unlet b:did_ftplugin_haskell
 \ '
 
