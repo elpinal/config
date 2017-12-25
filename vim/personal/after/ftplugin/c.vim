@@ -22,7 +22,7 @@
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
 
-function s:cciiff()
+function! s:cciiff()
   let output = system('cciiff ' . expand('%'))
   let i = match(output, 'file name: \zs.*')
   if i < 0
