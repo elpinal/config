@@ -30,7 +30,7 @@ endif
 
 
 " alignment
-command! -buffer -range Align  <line1>,<line2>call haskell#align#align()
+command! -buffer -nargs=? -range Align  <line1>,<line2>call haskell#align#align(<f-args>)
 
 " completion
 setlocal omnifunc=haskell#complete#haskell_complete

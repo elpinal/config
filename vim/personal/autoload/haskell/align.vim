@@ -1,4 +1,4 @@
-" align.vim - align `shouleBe` for testing with Hspec of Haskell.
+" align.vim - align infix notations for testing with Hspec of Haskell.
 " Version: 0.0.0
 " Copyright (C) 2017 El Pin Al
 " License: MIT license  {{{
@@ -37,9 +37,9 @@ function! s:add_col()
   let s:cols += [col('.')]
 endfunction
 
-function! s:get_max_col(f, l)
+function! s:get_max_col(f, l, query)
   let s:cols = []
-  execute a:f ',' a:l 'g/' . s:query . '/call s:add_col()'
+  execute a:f ',' a:l 'g/' . a:query . '/call s:add_col()'
   return max(s:cols)
 endfunction
 
@@ -49,9 +49,13 @@ function! s:pack_spaces(c0)
   execute 'normal!' 'i' . spaces
 endfunction
 
-function! haskell#align#align() range
-  let col = s:get_max_col(a:firstline, a:lastline)
-  execute a:firstline ',' a:lastline 'g/' . s:query . '/call s:pack_spaces(' . col . ')'
+function! haskell#align#align(...) range
+  let query = s:query
+  if a:0 == 1
+    let query = a:1
+  endif
+  let col = s:get_max_col(a:firstline, a:lastline, query)
+  execute a:firstline ',' a:lastline 'g/' . query . '/call s:pack_spaces(' . col . ')'
 endfunction
 
 
