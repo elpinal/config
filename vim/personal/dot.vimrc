@@ -2174,6 +2174,14 @@ autocmd MyAutoCmd FileType rust
 
 
 
+" scala  "{{{2
+
+autocmd MyAutoCmd FileType scala
+\ call s:set_short_indent()
+
+
+
+
 " tex  "{{{2
 
 autocmd MyAutoCmd FileType tex
