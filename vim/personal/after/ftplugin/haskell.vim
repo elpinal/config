@@ -46,6 +46,7 @@ command! -buffer JumpToModule  call haskell#jumpfile#here()
 
 nnoremap <buffer> <silent> <LocalLeader>a  :Align<Return>
 vnoremap <buffer> <silent> <LocalLeader>a  :Align<Return>
+nnoremap <buffer> <silent> <LocalLeader>s  :<C-u>!stack test --fast --ghc-options="-Wunused-imports -Wincomplete-patterns"<Return>
 nnoremap <buffer> <silent> <LocalLeader>t  :<C-u>EditTest<Return>
 nnoremap <buffer> <silent> <LocalLeader>j  :<C-u>JumpToModule<Return>
 
@@ -65,6 +66,7 @@ let b:undo_ftplugin .= '
 \ | delcommand JumpToModule
 \ | execute "silent! nunmap <buffer> <LocalLeader>a"
 \ | execute "silent! vunmap <buffer> <LocalLeader>a"
+\ | execute "silent! nunmap <buffer> <LocalLeader>s"
 \ | execute "silent! nunmap <buffer> <LocalLeader>t"
 \ | execute "silent! nunmap <buffer> <LocalLeader>j"
 \ | unlet b:did_ftplugin_haskell
