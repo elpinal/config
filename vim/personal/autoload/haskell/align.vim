@@ -32,8 +32,12 @@ let s:query = '`shouldBe`'
 
 
 " Interface  "{{{1
+function! s:jump_to_match()
+  execute "normal! /\<CR>"
+endfunction
+
 function! s:add_col()
-  normal! n
+  call s:jump_to_match()
   let s:cols += [col('.')]
 endfunction
 
@@ -44,7 +48,7 @@ function! s:get_max_col(f, l, query)
 endfunction
 
 function! s:pack_spaces(c0)
-  normal! n
+  call s:jump_to_match()
   let spaces = repeat(' ', a:c0 - col('.'))
   execute 'normal!' 'i' . spaces
 endfunction
