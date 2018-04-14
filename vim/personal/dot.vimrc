@@ -2642,6 +2642,16 @@ let g:vcsi_use_native_message_p = 1
 
 " wwwsearch  "{{{2
 
+call wwwsearch#add(
+\   'duckduckgo',
+\   'https://duckduckgo.com/?q={keyword}'
+\ )
+
+call wwwsearch#add(
+\   'default',
+\   'https://duckduckgo.com/?q={keyword}'
+\ )
+
 Arpeggio map ow  <Plug>(operator-wwwsearch)
 
 Cnmap [Space]*  Wwwsearch -default <C-r><C-w>
