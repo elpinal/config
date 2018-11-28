@@ -2148,6 +2148,17 @@ autocmd MyAutoCmd FileType ruby
 
 
 
+" SATySFi  "{{{2
+
+autocmd MyAutoCmd BufRead,BufNewFile *.{saty,satyh,satyg}
+\ setfiletype satysfi
+
+autocmd MyAutoCmd FileType satysfi
+\ call s:set_short_indent()
+
+
+
+
 " scheme  "{{{2
 
 let g:is_gauche = 1
