@@ -2537,6 +2537,20 @@ Cnmap <silent> [Space]kw  Ku myproject
 
 
 
+" language server protocol  "{{{2
+
+if executable('golsp')
+  autocmd MyAutoCmd User lsp_setup call lsp#register_server({
+        \ 'name': 'go-lang',
+        \ 'cmd': {server_info->['golsp', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+  autocmd MyAutoCmd FileType go setlocal omnifunc=lsp#complete
+endif
+
+
+
+
 " narrow  "{{{2
 
 Cmap <count> [Space]xn  Narrow
