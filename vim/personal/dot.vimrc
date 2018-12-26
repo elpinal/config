@@ -2156,6 +2156,7 @@ autocmd MyAutoCmd BufRead,BufNewFile *.{saty,satyh,satyg}
 autocmd MyAutoCmd FileType satysfi
 \   call s:set_short_indent()
 \ | setlocal iskeyword+=45  " hyphen (-)
+\ | setlocal matchpairs+=<:>
 
 
 
