@@ -2184,6 +2184,8 @@ let g:is_bash = 1
 autocmd MyAutoCmd FileType rust
 \ setlocal expandtab shiftwidth=4 softtabstop=4
 
+let g:rustfmt_autosave = 1
+
 
 
 
