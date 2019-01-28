@@ -2153,9 +2153,10 @@ autocmd MyAutoCmd FileType ruby
 autocmd MyAutoCmd BufRead,BufNewFile *.{saty,satyh,satyg}
 \ setfiletype satysfi
 
+" Note: 45 represents a hyphen (-).
 autocmd MyAutoCmd FileType satysfi
 \   call s:set_short_indent()
-\ | setlocal iskeyword+=45  " hyphen (-)
+\ | setlocal iskeyword+=45
 \ | setlocal matchpairs+=<:>
 
 
