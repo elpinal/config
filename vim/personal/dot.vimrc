@@ -2037,6 +2037,17 @@ endif
 
 
 
+" 1ml  "{{{2
+
+autocmd MyAutoCmd BufRead,BufNewFile *.1ml
+\ setfiletype 1ml
+
+autocmd MyAutoCmd FileType 1ml
+\   call s:set_short_indent()
+
+
+
+
 " coffee  "{{{2
 
 autocmd MyAutoCmd FileType coffee
