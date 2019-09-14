@@ -2141,6 +2141,14 @@ autocmd MyAutoCmd BufReadPost {dav,file,ftp,http,rcp,rsync,scp,sftp}://*
 
 
 
+" ocaml  "{{{2
+
+autocmd MyAutoCmd FileType ocaml
+\ call s:set_short_indent()
+
+
+
+
 " python  "{{{2
 
 autocmd MyAutoCmd FileType python
