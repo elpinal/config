@@ -2215,6 +2215,14 @@ let g:is_bash = 1
 
 
 
+" Standard ML  "{{{2
+
+autocmd MyAutoCmd FileType sml
+\   setlocal textwidth&
+
+
+
+
 " rust  "{{{2
 
 autocmd MyAutoCmd FileType rust
