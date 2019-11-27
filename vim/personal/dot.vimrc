@@ -2064,6 +2064,14 @@ autocmd MyAutoCmd FileType css
 
 
 
+" fsharp  "{{{2
+
+autocmd MyAutoCmd FileType fsharp
+\ call s:set_short_indent()
+
+
+
+
 " go  "{{{2
 
 autocmd MyAutoCmd FileType go
