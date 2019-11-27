@@ -2048,6 +2048,14 @@ autocmd MyAutoCmd FileType 1ml
 
 
 
+" Alice ML  "{{{2
+
+autocmd MyAutoCmd BufRead,BufNewFile *.aml
+\ set filetype=sml
+
+
+
+
 " coffee  "{{{2
 
 autocmd MyAutoCmd FileType coffee
