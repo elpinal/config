@@ -2056,6 +2056,14 @@ autocmd MyAutoCmd BufRead,BufNewFile *.aml
 
 
 
+" Bright ML  "{{{2
+
+autocmd MyAutoCmd BufRead,BufNewFile *.bml
+\ setfiletype bml
+
+
+
+
 " coffee  "{{{2
 
 autocmd MyAutoCmd FileType coffee
