@@ -2228,6 +2228,9 @@ let g:is_bash = 1
 autocmd MyAutoCmd FileType sml
 \   setlocal textwidth&
 
+autocmd MyAutoCmd BufRead,BufNewFile *.sig
+\ set filetype=sml
+
 
 
 
