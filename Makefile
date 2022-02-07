@@ -1,9 +1,11 @@
-PREFIX=$(HOME)
+XDG_CONFIG_HOME=$(HOME)/.config
 
 install:
-	cp vim/.vimrc $(PREFIX)/.vimrc
+	cp vim/.vimrc $(HOME)/.vimrc
 
-	touch $(PREFIX)/.emacs.d/custom.el
-	cp emacs/init.el $(PREFIX)/.emacs.d/init.el
+	touch $(HOME)/.emacs.d/custom.el
+	cp emacs/init.el $(HOME)/.emacs.d/init.el
+
+	cp git/ignore $(XDG_CONFIG_HOME)/git/ignore
 
 .PHONY: install
