@@ -54,6 +54,9 @@
   :config
     (add-hook 'clojure-mode-hook #'smartparens-strict-mode))
 
+(leaf cider
+  :ensure t)
+
 (leaf sml-mode
   :ensure t)
 
