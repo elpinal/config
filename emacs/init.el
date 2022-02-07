@@ -27,6 +27,7 @@
       ("<up>" . windmove-up)
       ("<right>" . windmove-right)
       ("M-c" . delete-window)
+      ("C-x !". shell)
     :config
       (leaf-keywords-init)))
 
