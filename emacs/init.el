@@ -28,6 +28,8 @@
       ("<right>" . windmove-right)
       ("M-c" . delete-window)
       ("C-x !". shell)
+      ("C-x M-z" . zap-to-char)
+      ("M-z" . repeat)
     :config
       (leaf-keywords-init)))
 
