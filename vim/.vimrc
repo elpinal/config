@@ -29,3 +29,6 @@ nnoremap <Esc>q <C-w>q
 
 nnoremap <Space> <Nop>
 nnoremap <silent> <Space>/ :nohlsearch<CR>
+
+noremap <expr> n (v:searchforward ? 'n' : 'N')
+noremap <expr> N (v:searchforward ? 'N' : 'n')
