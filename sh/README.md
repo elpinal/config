@@ -1,2 +1,3 @@
+- `ghq`
 - `htop`
 - `ripgrep`
