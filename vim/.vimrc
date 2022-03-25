@@ -7,6 +7,7 @@ set directory=~/tmp/vim
 set expandtab
 set hlsearch
 set incsearch
+set laststatus=2
 set mouse=a
 set shiftwidth=2
 set showcmd
