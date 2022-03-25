@@ -73,6 +73,11 @@
 (leaf ddskk
   :ensure t)
 
+(leaf rg
+  :ensure t
+  :init (rg-enable-default-bindings)
+  :bind ("C-c C-s" . rg-menu))
+
 (leaf dracula-theme
   :ensure t
   :init
