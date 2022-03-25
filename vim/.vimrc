@@ -44,3 +44,6 @@ nnoremap <silent> <Space>/ :nohlsearch<CR>
 
 noremap <expr> n (v:searchforward ? 'n' : 'N')
 noremap <expr> N (v:searchforward ? 'N' : 'n')
+
+nnoremap <C-k> <C-o>
+nnoremap <C-j> <C-i>
