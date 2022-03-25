@@ -47,3 +47,5 @@ noremap <expr> N (v:searchforward ? 'N' : 'n')
 
 nnoremap <C-k> <C-o>
 nnoremap <C-j> <C-i>
+
+nnoremap ; <C-]>
