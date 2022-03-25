@@ -13,6 +13,17 @@ set shiftwidth=2
 set showcmd
 set softtabstop=2
 
+" https://github.com/kana/config/blob/5e3acc0df630048f48e53073a1816e106dbffd15/vim/personal/dot.vimrc#L256
+let &statusline = ''
+let &statusline .= '%<%f %h%m%r%w'
+let &statusline .= '%='
+let &statusline .= '['
+let &statusline .=   '%{&l:fileencoding == "" ? &encoding : &l:fileencoding}'
+let &statusline .=   '%{&l:bomb ? "/BOM" : ""}'
+let &statusline .= ']'
+let &statusline .= '[%{&l:fileformat}]'
+let &statusline .= '  %-14.(%l,%c%V%) %P'
+
 inoremap <C-l> <C-[>
 
 nnoremap <CR> :
