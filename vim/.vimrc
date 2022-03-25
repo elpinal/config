@@ -5,6 +5,8 @@ set backspace=indent,eol,start
 set belloff=all
 set directory=~/tmp/vim
 set expandtab
+" let &grepprg='rg --vimgrep'
+let &grepprg='git grep --line-number'
 set hlsearch
 set incsearch
 set laststatus=2
