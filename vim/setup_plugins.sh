@@ -2,6 +2,18 @@
 
 set -eo pipefail
 
+## SKK setup
+
+if [[ ! -a "$HOME/.skk" ]]
+then
+  mkdir "$HOME/.skk"
+  cd "$HOME/.skk"
+  curl https://skk-dev.github.io/dict/SKK-JISYO.L.gz --output SKK-JISYO.L.gz
+  gunzip SKK-JISYO.L.gz
+fi
+
+## Plugins
+
 start="$HOME/.vim/pack/plugins/start"
 
 mkdir -p "$start"
