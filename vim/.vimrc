@@ -51,3 +51,12 @@ nnoremap <C-k> <C-o>
 nnoremap <C-j> <C-i>
 
 nnoremap ; <C-]>
+
+
+"" Plugins
+
+packloadall
+
+call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
