@@ -29,6 +29,8 @@ let &statusline .= '  %-14.(%l,%c%V%) %P'
 inoremap <C-l> <C-[>
 inoremap <C-@> <C-[>
 
+inoremap <C-a> <Home>
+
 nnoremap <CR> :
 vnoremap <CR> :
 nnoremap : <CR>
