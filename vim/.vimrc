@@ -27,6 +27,7 @@ let &statusline .= '[%{&l:fileformat}]'
 let &statusline .= '  %-14.(%l,%c%V%) %P'
 
 inoremap <C-l> <C-[>
+inoremap <C-@> <C-[>
 
 nnoremap <CR> :
 vnoremap <CR> :
