@@ -28,3 +28,12 @@ if [[ ! -a "skkeleton" ]]
 then
   git clone https://github.com/vim-skk/skkeleton skkeleton
 fi
+
+if [[ ! -a "vimtex" ]]
+then
+  git clone https://github.com/lervag/vimtex vimtex
+fi
+
+## Help
+
+# vim -i NONE -e -s -c "helptags $start/vimtex/doc"
