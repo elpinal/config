@@ -83,9 +83,34 @@ nnoremap <Esc>y <C-w>v
 
 nnoremap <Esc>q <C-w>q
 
-""" Spaces
-nnoremap <Space> <Nop>
-nnoremap <silent> <Space>/ :nohlsearch<CR>
+""" Spaces: https://github.com/kana/config/blob/5e3acc0df630048f48e53073a1816e106dbffd15/vim/personal/dot.vimrc#L1784
+map <Space> [Space]
+noremap [Space] <Nop>
+nnoremap <silent> [Space]/ :nohlsearch<CR>
+
+command! -bar -nargs=+ Hecho  call s:cmd_Hecho('echo', [<f-args>])
+function! s:cmd_Hecho(echo_command, args)
+  let highlight_name = a:args[0]
+  let messages = a:args[1:]
+
+  execute 'echohl' highlight_name
+  execute a:echo_command join(messages)
+  echohl None
+endfunction
+
+function! s:keys_to_insert_one_character()
+  Hecho ModeMsg '-- INSERT (one char) --'
+  return nr2char(getchar()) . "\<Esc>"
+endfunction
+
+nnoremap [Space]A A<C-r>=<SID>keys_to_insert_one_character()<Return>
+nnoremap [Space]a a<C-r>=<SID>keys_to_insert_one_character()<Return>
+
+nnoremap [Space]I I<C-r>=<SID>keys_to_insert_one_character()<Return>
+nnoremap [Space]i i<C-r>=<SID>keys_to_insert_one_character()<Return>
+
+nnoremap [Space]h zc
+nnoremap [Space]l zo
 
 noremap <expr> n (v:searchforward ? 'n' : 'N')
 noremap <expr> N (v:searchforward ? 'N' : 'n')
