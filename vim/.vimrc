@@ -26,6 +26,42 @@ let &statusline .= ']'
 let &statusline .= '[%{&l:fileformat}]'
 let &statusline .= '  %-14.(%l,%c%V%) %P'
 
+function MyTabLabel(n)
+  let cwd = getcwd(-1, a:n)
+  if cwd == '/'
+    return cwd
+  elseif cwd == expand('~')
+    return '~'
+  else
+    return fnamemodify(cwd, ":t")
+  endif
+endfunction
+
+function MyTabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    if i + 1 == tabpagenr()
+      let s .= '%#TabLineSel#'
+    else
+      let s .= '%#TabLine#'
+    endif
+
+    let s .= '%' . (i + 1) . 'T'
+
+    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+  endfor
+
+  let s .= '%#TabLineFill#%T'
+
+  if tabpagenr('$') > 1
+    let s .= '%=%#TabLine#%999Xclose'
+  endif
+
+  return s
+endfunction
+
+set tabline=%!MyTabLine()
+
 inoremap <C-l> <C-[>
 inoremap <C-@> <C-[>
 
@@ -36,6 +72,9 @@ vnoremap <CR> :
 nnoremap : <CR>
 vnoremap : <CR>
 
+nnoremap @<CR> @:
+nnoremap ; <C-]>
+
 nnoremap <C-h> :help<Space>
 
 nnoremap <Tab> <C-w><C-w>
@@ -44,6 +83,7 @@ nnoremap <Esc>y <C-w>v
 
 nnoremap <Esc>q <C-w>q
 
+""" Spaces
 nnoremap <Space> <Nop>
 nnoremap <silent> <Space>/ :nohlsearch<CR>
 
@@ -52,8 +92,6 @@ noremap <expr> N (v:searchforward ? 'N' : 'n')
 
 nnoremap <C-k> <C-o>
 nnoremap <C-j> <C-i>
-
-nnoremap ; <C-]>
 
 
 "" Plugins
