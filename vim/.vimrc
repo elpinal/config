@@ -112,6 +112,19 @@ nnoremap [Space]i i<C-r>=<SID>keys_to_insert_one_character()<Return>
 nnoremap [Space]h zc
 nnoremap [Space]l zo
 
+" cmdline: https://github.com/kana/config/blob/5e3acc0df630048f48e53073a1816e106dbffd15/vim/personal/dot.vimrc#L1708
+cnoremap <Esc>h <Left>
+cnoremap <Esc>j <Down>
+cnoremap <Esc>k <Up>
+cnoremap <Esc>l <Right>
+cnoremap <Esc>H <Home>
+cnoremap <Esc>L <End>
+cnoremap <Esc>w <S-Right>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>x <Del>
+
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+
 noremap <expr> n (v:searchforward ? 'n' : 'N')
 noremap <expr> N (v:searchforward ? 'N' : 'n')
 
