@@ -143,3 +143,14 @@ packloadall
 call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
+
+
+"" Filetypes
+
+augroup MyAutoCmd
+  autocmd!
+augroup END
+
+autocmd MyAutoCmd FileType tex
+\   setlocal iskeyword+=:
+\ | setlocal iskeyword+=-
