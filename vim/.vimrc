@@ -112,6 +112,10 @@ nnoremap [Space]i i<C-r>=<SID>keys_to_insert_one_character()<Return>
 nnoremap [Space]h zc
 nnoremap [Space]l zo
 
+nnoremap <silent> [Space]e :setlocal encoding? termencoding? fileencoding? fileencodings?<Return>
+nnoremap <silent> [Space]f :setlocal filetype? fileencoding? fileformat?<Return>
+nnoremap <silent> [Space]r :registers<Return>
+
 " cmdline: https://github.com/kana/config/blob/5e3acc0df630048f48e53073a1816e106dbffd15/vim/personal/dot.vimrc#L1708
 cnoremap <Esc>h <Left>
 cnoremap <Esc>j <Down>
