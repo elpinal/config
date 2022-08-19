@@ -129,6 +129,18 @@ cnoremap <Esc>x <Del>
 
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 
+inoremap <Esc>h <Left>
+inoremap <Esc>j <Down>
+inoremap <Esc>k <Up>
+inoremap <Esc>l <Right>
+
+inoremap <Esc>w <C-Right>
+inoremap <Esc>b <C-Left>
+inoremap <Esc>e <C-o>e
+inoremap <Esc>W <C-o>W
+inoremap <Esc>B <C-o>B
+inoremap <Esc>E <C-o>E
+
 noremap <expr> n (v:searchforward ? 'n' : 'N')
 noremap <expr> N (v:searchforward ? 'N' : 'n')
 
