@@ -26,7 +26,7 @@ let &statusline .= ']'
 let &statusline .= '[%{&l:fileformat}]'
 let &statusline .= '  %-14.(%l,%c%V%) %P'
 
-function MyTabLabel(n)
+function! MyTabLabel(n)
   let cwd = getcwd(-1, a:n)
   if cwd == '/'
     return cwd
@@ -37,7 +37,7 @@ function MyTabLabel(n)
   endif
 endfunction
 
-function MyTabLine()
+function! MyTabLine()
   let s = ''
   for i in range(tabpagenr('$'))
     if i + 1 == tabpagenr()
