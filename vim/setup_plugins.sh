@@ -34,6 +34,16 @@ then
   git clone https://github.com/lervag/vimtex vimtex
 fi
 
+if [[ ! -a "vim-lsp" ]]
+then
+  git clone https://github.com/prabirshrestha/vim-lsp vim-lsp
+fi
+
+if [[ ! -a "vim-lsp-settings" ]]
+then
+  git clone https://github.com/mattn/vim-lsp-settings vim-lsp-settings
+fi
+
 ## Help
 
 # vim -i NONE -e -s -c "helptags $start/vimtex/doc"
