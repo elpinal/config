@@ -163,6 +163,16 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
+autocmd MyAutoCmd FileType go
+\   setlocal noexpandtab
+\ | setlocal shiftwidth=8
+\ | setlocal softtabstop=8
+
+autocmd MyAutoCmd FileType make
+\   setlocal noexpandtab
+\ | setlocal shiftwidth=8
+\ | setlocal softtabstop=8
+
 autocmd MyAutoCmd FileType tex
 \   setlocal iskeyword+=:
 \ | setlocal iskeyword+=-
