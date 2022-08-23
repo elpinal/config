@@ -8,6 +8,7 @@ set expandtab
 " let &grepprg='rg --vimgrep'
 let &grepprg='git grep --line-number'
 set hlsearch
+nohlsearch " Don't highlight when reloading vimrc.
 set incsearch
 set laststatus=2
 set mouse=a
