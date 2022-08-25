@@ -68,6 +68,8 @@
 
 (leaf magit
   :ensure t
+  :init
+    (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
   :bind ("C-x m" . magit))
 
 (leaf ddskk
