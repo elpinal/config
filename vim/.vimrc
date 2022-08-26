@@ -79,10 +79,10 @@ nnoremap ; <C-]>
 nnoremap <C-h> :help<Space>
 
 nnoremap <Tab> <C-w><C-w>
+nnoremap <Esc>c <C-w>c
+nnoremap <Esc>y <C-w>v
 
-nmap <Esc> <C-w>
-nnoremap <C-w>y <C-w>v
-nnoremap <C-w><CR> <C-w>:
+nnoremap <Esc>q <C-w>q
 
 """ Spaces: https://github.com/kana/config/blob/5e3acc0df630048f48e53073a1816e106dbffd15/vim/personal/dot.vimrc#L1784
 map <Space> [Space]
