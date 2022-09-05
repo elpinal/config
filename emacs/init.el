@@ -30,6 +30,8 @@
       ("C-x !". shell)
       ("C-x M-z" . zap-to-char)
       ("M-z" . repeat)
+      ("C-c c" . org-capture)
+      ("C-c a" . org-agenda)
     :config
       (leaf-keywords-init)))
 
@@ -39,6 +41,16 @@
 (set-language-environment "English")
 
 (setq require-final-newline t)
+
+(leaf org
+  :bind (:org-mode-map ("M-h" . backward-kill-word))
+  :config
+    (setq org-todo-keywords
+	  '((sequence "TODO" "DOING" "|" "DONE")))
+    (setq org-directory "~/.org")
+    (setq org-default-notes-file (concat org-directory "/capture.org"))
+    (setq org-archive-location (concat org-directory "/archive.org::"))
+    (setq org-agenda-files (list (concat org-directory "/capture.org"))))
 
 (leaf undo-tree
   :ensure t
