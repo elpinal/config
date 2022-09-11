@@ -66,7 +66,7 @@
   :bind (:org-mode-map ("M-h" . backward-kill-word))
   :config
     (setq org-todo-keywords
-	  '((sequence "TODO" "DOING" "|" "DONE")))
+	  '((sequence "TODO(t)" "DOING(i)" "WAIT(w!)" "|" "DONE(d!)")))
     (setq org-directory "~/.org")
     (setq org-default-notes-file (concat org-directory "/capture.org"))
     (setq org-archive-location (concat org-directory "/archive.org::"))
