@@ -32,6 +32,8 @@
       ("M-z" . repeat)
       ("C-c c" . org-capture)
       ("C-c a" . org-agenda)
+      ("C-x RET RET" . load-current-file)
+      ("C-x RET ." . load-init-file)
     :config
       (leaf-keywords-init)))
 
@@ -41,6 +43,17 @@
 (set-language-environment "English")
 
 (setq require-final-newline t)
+
+;; Load init file quickly.
+(defun load-current-file ()
+  "Load the current file."
+  (interactive)
+  (load-file (buffer-file-name)))
+
+(defun load-init-file ()
+  "Load user's init file."
+  (interactive)
+  (load-file user-init-file))
 
 (leaf org
   :bind (:org-mode-map ("M-h" . backward-kill-word))
