@@ -34,6 +34,8 @@
       ("C-c a" . org-agenda)
       ("C-x RET RET" . load-current-file)
       ("C-x RET ." . load-init-file)
+      ("C-x y" . open-config)
+      ("C-x C-y" . open-config)
     :config
       (leaf-keywords-init)))
 
@@ -54,6 +56,11 @@
   "Load user's init file."
   (interactive)
   (load-file user-init-file))
+
+(defun open-config ()
+  "Open users's init file *in the repository*."
+  (interactive)
+  (find-file "~/src/github.com/elpinal/config/emacs/init.el"))
 
 (leaf org
   :bind (:org-mode-map ("M-h" . backward-kill-word))
