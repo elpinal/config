@@ -36,6 +36,8 @@
       ("C-x RET ." . load-init-file)
       ("C-x y" . open-config)
       ("C-x C-y" . open-config)
+      ("M-e" . scroll-up-n)
+      ("M-y" . scroll-down-n)
     :config
       (leaf-keywords-init)))
 
@@ -61,6 +63,16 @@
   "Open users's init file *in the repository*."
   (interactive)
   (find-file "~/src/github.com/elpinal/config/emacs/init.el"))
+
+(defun scroll-up-n (n)
+  "Scroll up N lines."
+  (interactive "p")
+  (scroll-up n))
+
+(defun scroll-down-n (n)
+  "Scroll down N lines."
+  (interactive "p")
+  (scroll-down n))
 
 (leaf org
   :bind (:org-mode-map ("M-h" . backward-kill-word))
