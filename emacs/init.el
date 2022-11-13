@@ -47,6 +47,7 @@
 (set-language-environment "English")
 
 (setq require-final-newline t)
+(setq confirm-kill-emacs 'y-or-n-p)
 
 ;; Load init file quickly.
 (defun load-current-file ()
