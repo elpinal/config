@@ -49,6 +49,11 @@ then
   git clone https://github.com/lambdalisue/fern.vim fern.vim
 fi
 
+if [[ ! -a "fern-git-status.vim" ]]
+then
+  git clone https://github.com/lambdalisue/fern-git-status.vim fern-git-status.vim
+fi
+
 ## Help
 
 # vim -i NONE -e -s -c "helptags $start/vimtex/doc"
