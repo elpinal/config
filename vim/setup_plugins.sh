@@ -54,6 +54,11 @@ then
   git clone https://github.com/lambdalisue/fern-git-status.vim fern-git-status.vim
 fi
 
+if [[ ! -a "vim-sandwich" ]]
+then
+  git clone https://github.com/machakann/vim-sandwich vim-sandwich
+fi
+
 ## Help
 
 # vim -i NONE -e -s -c "helptags $start/vimtex/doc"

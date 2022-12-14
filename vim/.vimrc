@@ -152,11 +152,22 @@ nnoremap <C-j> <C-i>
 
 "" Plugins
 
+" This line needs to be before `packloadall`.
+let g:sandwich_no_default_key_mappings = 1
+
 packloadall
 
 call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
+
+" vim-sandwich
+nmap [Space]s <Plug>(sandwich-add)
+xmap [Space]s <Plug>(sandwich-add)
+omap [Space]s <Plug>(sandwich-add)
+
+nmap [Space]d <Plug>(sandwich-delete)
+xmap [Space]d <Plug>(sandwich-delete)
 
 
 "" Filetypes
