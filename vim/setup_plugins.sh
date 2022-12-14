@@ -44,6 +44,11 @@ then
   git clone https://github.com/mattn/vim-lsp-settings vim-lsp-settings
 fi
 
+if [[ ! -a "fern.vim" ]]
+then
+  git clone https://github.com/lambdalisue/fern.vim fern.vim
+fi
+
 ## Help
 
 # vim -i NONE -e -s -c "helptags $start/vimtex/doc"
