@@ -169,6 +169,9 @@ omap [Space]s <Plug>(sandwich-add)
 nmap [Space]d <Plug>(sandwich-delete)
 xmap [Space]d <Plug>(sandwich-delete)
 
+" Fern
+let g:fern#default_hidden = 1
+
 
 "" Filetypes
 
