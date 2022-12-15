@@ -172,6 +172,15 @@ xmap [Space]d <Plug>(sandwich-delete)
 " Fern
 let g:fern#default_hidden = 1
 
+function! s:init_fern() abort
+  nmap <buffer> - <Plug>(fern-action-leave)
+endfunction
+
+augroup my-fern
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+
 
 "" Filetypes
 
