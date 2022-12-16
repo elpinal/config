@@ -117,6 +117,11 @@
     (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
   :bind ("C-x m" . magit))
 
+(leaf counsel
+  :ensure t
+  :init
+    (ivy-mode 1))
+
 (leaf ddskk
   :ensure t)
 
