@@ -174,6 +174,7 @@ let g:fern#default_hidden = 1
 
 function! s:init_fern() abort
   nmap <buffer> - <Plug>(fern-action-leave)
+  nnoremap <buffer> <C-h> :help<Space>
 endfunction
 
 augroup my-fern
