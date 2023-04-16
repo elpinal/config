@@ -199,6 +199,9 @@ autocmd MyAutoCmd FileType make
 \ | setlocal shiftwidth=8
 \ | setlocal softtabstop=8
 
+autocmd MyAutoCmd BufNewFile,BufRead *.sig
+\   set filetype=sml
+
 autocmd MyAutoCmd FileType tex
 \   setlocal iskeyword+=:
 \ | setlocal iskeyword+=-
