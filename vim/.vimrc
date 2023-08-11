@@ -163,6 +163,8 @@ packloadall
 call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
+imap <C-b> <Plug>(skkeleton-disable)
+cmap <C-b> <Plug>(skkeleton-disable)
 
 " vim-sandwich
 nmap [Space]s <Plug>(sandwich-add)
