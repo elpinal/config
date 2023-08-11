@@ -78,6 +78,14 @@ nnoremap ; <C-]>
 
 nnoremap <C-h> :help<Space>
 
+""" tabs
+nnoremap t <Nop>
+nnoremap <silent> tn :tabnew<CR>
+nnoremap <silent> tj :tabnext<CR>
+nnoremap <silent> tk :tabprev<CR>
+nnoremap <silent> th :tabmove -1<CR>
+nnoremap <silent> tl :tabmove +1<CR>
+
 nnoremap <Tab> <C-w><C-w>
 nnoremap <Esc>c <C-w>c
 nnoremap <Esc>y <C-w>v
@@ -120,6 +128,8 @@ nnoremap <silent> [Space]r :registers<Return>
 
 nnoremap <silent> [Space]<CR><CR> :source %<Return>
 nnoremap <silent> [Space]<CR>. :source ~/.vimrc<Return>
+
+noremap [Space]t t
 
 " cmdline: https://github.com/kana/config/blob/5e3acc0df630048f48e53073a1816e106dbffd15/vim/personal/dot.vimrc#L1708
 cnoremap <Esc>h <Left>
