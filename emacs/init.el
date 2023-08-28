@@ -144,11 +144,3 @@
 (if (executable-find "agda-mode")
   (load-file (let ((coding-system-for-read 'utf-8))
                   (shell-command-to-string "agda-mode locate"))))
-
-(if (executable-find "opam")
-    (progn
-      ;; Add opam emacs directory to the load-path
-      (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
-      (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
-      ;; Pre-load Andromeda
-      (require 'andromeda-autoloads)))
