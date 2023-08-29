@@ -59,6 +59,11 @@ then
   git clone https://github.com/machakann/vim-sandwich vim-sandwich
 fi
 
+if [[ ! -a "lexima" ]]
+then
+  git clone https://github.com/cohama/lexima.vim lexima
+fi
+
 ## Help
 
 # vim -i NONE -e -s -c "helptags $start/vimtex/doc"
