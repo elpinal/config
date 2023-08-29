@@ -59,9 +59,14 @@ then
   git clone https://github.com/machakann/vim-sandwich vim-sandwich
 fi
 
-if [[ ! -a "lexima" ]]
+if [[ ! -a "lexima.vim" ]]
 then
-  git clone https://github.com/cohama/lexima.vim lexima
+  git clone https://github.com/cohama/lexima.vim lexima.vim
+fi
+
+if [[ ! -a "forester.vim" ]]
+then
+  git clone https://github.com/elpinal/forester.vim forester.vim
 fi
 
 ## Help
