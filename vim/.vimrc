@@ -199,6 +199,10 @@ augroup my-fern
   autocmd FileType fern call s:init_fern()
 augroup END
 
+nnoremap <silent> [Space]. :Fern -drawer .<CR>
+nnoremap <silent> [Space]~ :Fern -drawer ~<CR>
+nnoremap [Space]F :Fern -drawer<Space>
+
 
 "" Filetypes
 
