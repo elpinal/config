@@ -213,6 +213,7 @@ let g:coc_global_extensions =
       \ [ 'coc-json'
       \ , 'coc-git'
       \ , 'coc-snippets'
+      \ , 'coc-tsserver'
       \ ]
 
 hi CocMenuSel ctermbg=237 guibg=#13354A
