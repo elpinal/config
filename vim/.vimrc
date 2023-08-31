@@ -225,6 +225,9 @@ autocmd MyAutoCmd FileType go
 \ | setlocal shiftwidth=8
 \ | setlocal softtabstop=8
 
+autocmd MyAutoCmd FileType json
+\   syntax match Comment +\/\/.\+$+
+
 autocmd MyAutoCmd FileType make
 \   setlocal noexpandtab
 \ | setlocal shiftwidth=8
