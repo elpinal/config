@@ -78,4 +78,13 @@ fi
 
 ## Help
 
-# vim -i NONE -e -s -c "helptags $start/vimtex/doc"
+vim -i NONE -e -c "helptags $start/denops.vim/doc | q"
+vim -i NONE -e -c "helptags $start/skkeleton/doc | q"
+vim -i NONE -e -c "helptags $start/vimtex/doc | q"
+vim -i NONE -e -c "helptags $start/vim-lsp/doc | q"
+vim -i NONE -e -c "helptags $start/vim-lsp-settings/doc | q"
+vim -i NONE -e -c "helptags $start/fern.vim/doc | q"
+vim -i NONE -e -c "helptags $start/fern-git-status.vim/doc | q"
+vim -i NONE -e -c "helptags $start/vim-sandwich/doc | q"
+vim -i NONE -e -c "helptags $start/lexima.vim/doc | q"
+vim -i NONE -e -c "helptags $start/coc.nvim/doc | q"
