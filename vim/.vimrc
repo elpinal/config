@@ -203,6 +203,16 @@ nnoremap <silent> [Space]. :Fern -drawer .<CR>
 nnoremap <silent> [Space]~ :Fern -drawer ~<CR>
 nnoremap [Space]F :Fern -drawer<Space>
 
+" coc.nvim
+let g:coc_global_extensions =
+      \ [ 'coc-json'
+      \ , 'coc-git'
+      \ , 'coc-snippets'
+      \ ]
+
+hi CocMenuSel ctermbg=237 guibg=#13354A
+hi CocFloating ctermbg=8 guibg=#13354A
+
 
 "" Filetypes
 
