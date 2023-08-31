@@ -2,6 +2,7 @@ XDG_CONFIG_HOME=$(HOME)/.config
 
 install:
 	cp vim/.vimrc $(HOME)/.vimrc
+	cp vim/coc-settings.json $(HOME)/.vim/coc-settings.json
 	./vim/setup_plugins.sh
 
 	touch $(HOME)/.emacs.d/custom.el
