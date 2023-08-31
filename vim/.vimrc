@@ -213,6 +213,8 @@ let g:coc_global_extensions =
 hi CocMenuSel ctermbg=237 guibg=#13354A
 hi CocFloating ctermbg=8 guibg=#13354A
 
+inoremap <expr> <C-y> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
+
 
 "" Filetypes
 
