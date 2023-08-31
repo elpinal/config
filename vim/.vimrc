@@ -211,10 +211,10 @@ nnoremap [Space]F :Fern -drawer<Space>
 " coc.nvim
 let g:coc_global_extensions =
       \ [ 'coc-json'
+      \ , 'coc-forester'
       \ , 'coc-git'
       \ , 'coc-snippets'
       \ , 'coc-tsserver'
-      \ , 'https://github.com/elpinal/coc-forester'
       \ ]
 
 hi CocMenuSel ctermbg=237 guibg=#13354A
