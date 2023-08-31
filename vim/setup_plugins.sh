@@ -69,6 +69,11 @@ then
   git clone https://github.com/elpinal/forester.vim forester.vim
 fi
 
+if [[ ! -a "coc.nvim" ]]
+then
+  git clone --branch release https://github.com/neoclide/coc.nvim coc.nvim
+fi
+
 ## Help
 
 # vim -i NONE -e -s -c "helptags $start/vimtex/doc"
