@@ -1,7 +1,16 @@
 {
   "Init": {
     "prefix": ["\\title"],
-    "body": ["\\title{${1:title}}", "\\taxon{${2:taxon}}", "", "\\p{", "\t$0", "}"],
+    "body":
+      ["\\title{${1:title}}",
+       "\\taxon{${2:taxon}}",
+       "",
+       "\\import{base-macros}",
+       "",
+       "\\p{",
+       "\t$0",
+       "}"
+      ],
     "description": "For an initialization."
   }
 }
