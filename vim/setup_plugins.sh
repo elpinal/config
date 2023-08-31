@@ -1,5 +1,7 @@
 #!/bin/bash
 
+[ "$DEBUG" == 'true' ] && set -x
+
 set -eo pipefail
 
 ## SKK setup
