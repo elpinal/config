@@ -221,6 +221,8 @@ hi CocFloating ctermbg=8 guibg=#13354A
 
 inoremap <expr> <C-y> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
 
+nnoremap <silent> [Space]h :call CocActionAsync('doHover')<cr>
+
 imap <C-s> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<C-u>'
 let g:coc_snippet_prev = '<C-z>'
