@@ -164,6 +164,11 @@ noremap <expr> N (v:searchforward ? 'N' : 'n')
 nnoremap <C-k> <C-o>
 nnoremap <C-j> <C-i>
 
+" unused keys
+inoremap <C-q> <Nop>
+inoremap <C-u> <Nop>
+inoremap <C-z> <Nop>
+
 
 "" Plugins
 
@@ -215,6 +220,9 @@ hi CocFloating ctermbg=8 guibg=#13354A
 
 inoremap <expr> <C-y> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
 
+imap <C-s> <Plug>(coc-snippets-expand)
+let g:coc_snippet_next = '<C-u>'
+let g:coc_snippet_prev = '<C-z>'
 
 "" Filetypes
 
