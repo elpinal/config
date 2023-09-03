@@ -76,6 +76,11 @@ then
   git clone --branch release https://github.com/neoclide/coc.nvim coc.nvim
 fi
 
+if [[ ! -a "everforest" ]]
+then
+  git clone https://github.com/sainnhe/everforest everforest
+fi
+
 ## Help
 
 vim -i NONE -e -c "helptags $start/denops.vim/doc | q"
@@ -88,3 +93,4 @@ vim -i NONE -e -c "helptags $start/fern-git-status.vim/doc | q"
 vim -i NONE -e -c "helptags $start/vim-sandwich/doc | q"
 vim -i NONE -e -c "helptags $start/lexima.vim/doc | q"
 vim -i NONE -e -c "helptags $start/coc.nvim/doc | q"
+vim -i NONE -e -c "helptags $start/everforest/doc | q"

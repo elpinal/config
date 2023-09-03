@@ -176,6 +176,8 @@ let g:sandwich_no_default_key_mappings = 1
 
 packloadall
 
+colorscheme everforest
+
 call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
