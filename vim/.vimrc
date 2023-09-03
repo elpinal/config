@@ -190,6 +190,7 @@ Jetpack 'elpinal/forester.vim', {'ft': 'forester'}
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'lambdalisue/fern.vim'
 Jetpack 'lervag/vimtex'
+Jetpack 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Jetpack 'machakann/vim-sandwich'
 Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
 Jetpack 'sainnhe/everforest'
@@ -240,6 +241,10 @@ augroup END
 nnoremap <silent> [Space]. :Fern -drawer .<CR>
 nnoremap <silent> [Space]~ :Fern -drawer ~<CR>
 nnoremap [Space]F :Fern -drawer<Space>
+
+" vim-clap
+nnoremap <silent> [Space]c :Clap<CR>
+nnoremap <silent> [Space]m :Clap history<CR>
 
 " coc.nvim
 let g:coc_global_extensions =
