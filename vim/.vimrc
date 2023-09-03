@@ -186,7 +186,7 @@ packadd vim-jetpack
 call jetpack#begin()
 Jetpack 'tani/vim-jetpack', {'opt': 1} " bootstrap
 Jetpack 'cohama/lexima.vim'
-Jetpack 'elpinal/forester.vim'
+Jetpack 'elpinal/forester.vim', {'ft': 'forester'}
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'lambdalisue/fern.vim'
 Jetpack 'lervag/vimtex'
