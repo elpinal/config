@@ -171,10 +171,29 @@ inoremap <C-z> <Nop>
 
 "" Plugins
 
-" This line needs to be before `packloadall`.
-let g:sandwich_no_default_key_mappings = 1
+packadd vim-jetpack
+call jetpack#begin()
+Jetpack 'tani/vim-jetpack', {'opt': 1} " bootstrap
+Jetpack 'cohama/lexima.vim'
+Jetpack 'elpinal/forester.vim'
+Jetpack 'lambdalisue/fern-git-status.vim'
+Jetpack 'lambdalisue/fern.vim'
+Jetpack 'lervag/vimtex'
+Jetpack 'machakann/vim-sandwich'
+Jetpack 'neoclide/coc.nvim', {'branch': 'release'}
+Jetpack 'sainnhe/everforest'
+Jetpack 'vim-denops/denops.vim', {'tag': 'v3.4.2'} " v3.4.2 for vim 8.
+Jetpack 'vim-skk/skkeleton'
+call jetpack#end()
 
-packloadall
+" Install if not installed yet.
+" No update is performed automatically.
+for name in jetpack#names()
+  if !jetpack#tap(name)
+    call jetpack#sync()
+    break
+  endif
+endfor
 
 colorscheme everforest
 
@@ -185,6 +204,8 @@ imap <C-b> <Plug>(skkeleton-disable)
 cmap <C-b> <Plug>(skkeleton-disable)
 
 " vim-sandwich
+let g:sandwich_no_default_key_mappings = 1
+
 nmap [Space]s <Plug>(sandwich-add)
 xmap [Space]s <Plug>(sandwich-add)
 omap [Space]s <Plug>(sandwich-add)
