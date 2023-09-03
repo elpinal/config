@@ -168,6 +168,17 @@ nnoremap <C-j> <C-i>
 inoremap <C-u> <Nop>
 inoremap <C-z> <Nop>
 
+" experimental
+set number
+noremap j gj
+noremap k gk
+noremap 0 g0
+noremap $ g$
+noremap gj j
+noremap gk k
+noremap g0 0
+noremap g$ $
+
 
 "" Plugins
 
