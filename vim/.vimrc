@@ -240,6 +240,7 @@ augroup END
 
 nnoremap <silent> [Space]. :Fern -drawer .<CR>
 nnoremap <silent> [Space]~ :Fern -drawer ~<CR>
+nnoremap <silent> [Space]% :Fern -drawer %:h<CR>
 nnoremap [Space]F :Fern -drawer<Space>
 
 " vim-clap
