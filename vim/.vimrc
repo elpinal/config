@@ -243,9 +243,9 @@ nnoremap [Space]F :Fern -drawer<Space>
 
 " coc.nvim
 let g:coc_global_extensions =
-      \ [ 'coc-json'
-      \ , 'coc-forester'
+      \ [ 'coc-forester'
       \ , 'coc-git'
+      \ , 'coc-json'
       \ , 'coc-snippets'
       \ , 'coc-tsserver'
       \ ]
