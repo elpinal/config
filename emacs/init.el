@@ -49,6 +49,8 @@
 (setq require-final-newline t)
 (setq confirm-kill-emacs 'y-or-n-p)
 
+(setq auto-mode-alist (cons '("\\.lagda.md$" . agda2-mode) auto-mode-alist))
+
 ;; Load init file quickly.
 (defun load-current-file ()
   "Load the current file."
