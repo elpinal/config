@@ -17,6 +17,7 @@
     :ensure t
     :bind
       ("C-h" . delete-backward-char)
+      ("C-t" . set-input-method)
       ("M-?" . help-for-help)
       ("C-z" . help-for-help)
       ("C-x M-q" . quoted-insert)
@@ -48,6 +49,7 @@
 
 (setq require-final-newline t)
 (setq confirm-kill-emacs 'y-or-n-p)
+(setq default-input-method 'japanese-skk)
 
 (setq auto-mode-alist (cons '("\\.lagda.md$" . agda2-mode) auto-mode-alist))
 
