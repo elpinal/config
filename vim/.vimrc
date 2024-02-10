@@ -185,8 +185,11 @@ noremap g$ $
 packadd vim-jetpack
 call jetpack#begin()
 Jetpack 'tani/vim-jetpack', {'opt': 1} " bootstrap
+
 Jetpack 'cohama/lexima.vim'
 Jetpack 'elpinal/forester.vim', {'ft': 'forester'}
+Jetpack 'kana/vim-textobj-line'
+Jetpack 'kana/vim-textobj-user'
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'lambdalisue/fern.vim'
 Jetpack 'lervag/vimtex'
