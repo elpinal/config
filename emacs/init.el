@@ -87,7 +87,8 @@
     (setq org-directory "~/.org")
     (setq org-default-notes-file (concat org-directory "/capture.org"))
     (setq org-archive-location (concat org-directory "/archive.org::"))
-    (setq org-agenda-files (list (concat org-directory "/capture.org"))))
+    (setq org-agenda-files (list (concat org-directory "/capture.org")))
+    (setf (cdr (assoc 'file org-link-frame-setup)) 'find-file))
 
 (leaf org-roam
   :ensure t
