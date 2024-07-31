@@ -89,6 +89,9 @@
     (setq org-archive-location (concat org-directory "/archive.org::"))
     (setq org-agenda-files (list (concat org-directory "/capture.org"))))
 
+(leaf org-roam
+  :ensure t)
+
 (leaf undo-tree
   :ensure t
   :bind ("M-r" . undo-tree-redo)
