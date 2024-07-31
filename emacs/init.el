@@ -90,7 +90,10 @@
     (setq org-agenda-files (list (concat org-directory "/capture.org"))))
 
 (leaf org-roam
-  :ensure t)
+  :ensure t
+  :init (org-roam-db-autosync-mode)
+  :config
+    (setq org-roam-directory "~/.org"))
 
 (leaf undo-tree
   :ensure t
