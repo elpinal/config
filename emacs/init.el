@@ -134,7 +134,9 @@
     (ivy-mode 1))
 
 (leaf ddskk
-  :ensure t)
+  :ensure t
+  :config
+    (setq skk-large-jisyo "~/.skk/SKK-JISYO.L"))
 
 (leaf rg
   :ensure t
